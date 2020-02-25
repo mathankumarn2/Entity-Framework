@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body style="height: 59px">
+        <div>
+            <table style="width: 1100px; margin: auto">
+                <tr style="width: 1100px; height: 50px">
+                    <td style="width: 120px">SBM Education</td>
+                </tr>
+                <tr style="width: 1100px; height: 40px; background-color:Highlight">
+                    <td colspan="3">
+                        @Html.ActionLink("Home", "Index", "College")
+                        @Html.ActionLink("Login", "Login", "User")
+                        @Html.ActionLink("Sign Up", "Registration", "User")
+                    </td>
+                </tr>
+                <tr style="width: 1100px; height: 20px; text-align:center">
+                    <td colspan="3">
+                        <div>
+                            @RenderBody()
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+</body>
+</html>

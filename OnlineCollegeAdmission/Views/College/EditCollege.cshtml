@@ -1,0 +1,70 @@
+﻿@model OnlineCollegeAdmission.Entity.College
+
+@{
+    ViewBag.Title = "EditCollege";
+}
+<center>
+    <h2>Edit College</h2>
+
+    @using (Html.BeginForm("UpdateCollege", "College", FormMethod.Post))
+    {
+        @Html.HiddenFor(model => model.CollegeCode)
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.CollegeCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.CollegeCode)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.CollegeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.CollegeName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.CollegeWebsite)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.CollegeWebsite)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.AdmissionFee)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.AdmissionFee)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.AdmissionFee)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.TotalSeats)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.TotalSeats)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.TotalSeats)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Update" />
+                </td>
+            </tr>
+        </table>
+    }
+    <div>
+        @Html.ActionLink("Back to List", "DisplayCollegeByAdmin")
+    </div>
+</center>
+

@@ -1,0 +1,22 @@
+﻿@model System.Data.DataRow
+
+<Center>
+    <div style="border-width:10px; border-bottom-color : red">
+        <h2>
+            @Model["CollegeName"]
+        </h2>
+        <div style="padding :60px; padding-left : 100px">
+            <p style=" float : left;">
+                Website : @Model["CollegeWebsite"]
+            </p>
+            <p style=" float : left;padding-left : 60px">
+                Admission Fees : @Model["AdmissionFee"]
+            </p>
+            <p style=" float : left;padding-left : 60px">
+                Available Seats :@Model["TotalSeats"]
+            </p>          
+        </div>
+    </div>
+    <br/>
+</Center>
+

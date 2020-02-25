@@ -1,0 +1,52 @@
+﻿@model OnlineCollegeAdmission.Entity.User
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<center>
+
+    <h2>Login</h2>
+    @Html.ActionLink("create new account", "Registration")
+
+    @if (TempData["Message"] != null)
+    {
+        <p>
+            @TempData["Message"].ToString()
+        </p>
+    }
+    @using (Html.BeginForm("Login", "User", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.Label("Email Id")
+                </td>
+                <td>
+                    @Html.TextBox("emailId")
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "text-danger" })
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password
+                </td>
+                <td>
+                    @Html.TextBox("password")
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Login" />
+                </td>
+            </tr>
+        </table>
+    }
+</center>
+
+

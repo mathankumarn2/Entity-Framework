@@ -1,0 +1,51 @@
+﻿@model OnlineCollegeAdmission.Entity.Department
+
+@{
+    ViewBag.Title = "AddDepartment";
+}
+
+<center>
+    <h2>Department</h2>
+    @using (Html.BeginForm("AddDepartment", "College", FormMethod.Post))
+    {
+        @Html.HiddenFor(model => model.CollegeCode)
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.DeptId)
+                </td>
+                <td>                   
+                    @Html.DropDownListFor(model => model.DeptId,(List<SelectListItem>) ViewBag.Dept,"Select Dept")
+                    @Html.ValidationMessageFor(model => model.DeptId)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Fees)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Fees)
+                    @Html.ValidationMessageFor(model => model.Fees)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model =>  model.Seats)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => Model.Seats)
+                    @Html.ValidationMessageFor(model => model.Seats)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Add Department" />
+                </td>
+            </tr>
+        </table>
+    }
+</center>
+
+
+

@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "DisplayDepartment";
+}
+
+    <Center>
+
+        <h2>Department</h2>
+
+        @if (TempData["Message"] != null)
+        {
+            <p>
+                @TempData["Message"].ToString()
+            </p>
+        }
+        @if (TempData["CollegeCode"] != null)
+        { 
+            TempData.Keep("CollegeCode");
+        }
+        <table border="1">
+            <thead>
+                <tr>
+                    @foreach (System.Data.DataColumn col in Model.Columns)
+                    {
+                        <th>@col.Caption</th>
+                    }
+                    <th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (System.Data.DataRow row in Model.Rows)
+                {
+                    <tr>
+                        @foreach (var item in row.ItemArray)
+                        {
+                            <td>@item.ToString()</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+            @Html.ActionLink("Add department", "AddDepartment");
+            @Html.ActionLink("Finish", "DisplayCollegeByAdmin")
+        </table>
+
+    </Center>
+

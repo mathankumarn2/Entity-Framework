@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "DisplayCollegeByUser";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<Center>
+    <h2>Colleges</h2>
+    <table>
+        <tr>
+            <th>
+                College Code
+            </th>
+            <th>
+                College Name   
+            </th>
+            <th>
+                Website
+            </th>
+        </tr>
+
+        @foreach (OnlineCollegeAdmission.Entity.College college in Model)
+        {
+            <tr>
+                <td>
+                    @college.CollegeCode
+                </td>
+                <td>
+                    @college.CollegeName
+                </td>
+                <td>
+                    @college.CollegeWebsite
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+    @*<table border="1">
+            <thead>
+                <tr>
+                    @foreach (System.Data.DataColumn col in Model.Columns)
+                    {
+                        <th>@col.Caption</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (System.Data.DataRow row in Model.Rows)
+                {
+                    <tr>
+                        @foreach (var item in row.ItemArray)
+                        {
+                            <td>@item.ToString()</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>*@
+</Center>
+
+

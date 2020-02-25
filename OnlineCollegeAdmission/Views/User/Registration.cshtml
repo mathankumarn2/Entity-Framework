@@ -1,0 +1,117 @@
+﻿@model OnlineCollegeAdmission.Entity.User
+@{
+    ViewBag.Title = "Registration";
+}
+
+<Center>
+    <h2>Registration</h2>
+    @using (Html.BeginForm("Registration", "User", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.FirstName)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => Model.FirstName)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => Model.FirstName)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.LastName)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => Model.LastName)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => Model.LastName)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Dob)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => Model.Dob)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => Model.Dob)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Gender)
+                </td>
+                <td>
+                    @Html.RadioButtonFor(model => Model.Gender, "Male") Male
+                    @Html.RadioButtonFor(model => Model.Gender, "Female") Female
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => Model.Gender)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.EmailId)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => Model.EmailId)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => Model.EmailId)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.PhoneNumber)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => Model.PhoneNumber)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => Model.PhoneNumber)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Password)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => Model.Password)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.Password)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.ConfirmPassword)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.ConfirmPassword)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                    </p>
+                    <p style="color: red;">
+                       @if(TempData["Message"] != null)
+                       {
+                           @TempData["Message"].ToString();
+                       }
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Create Account" />
+                </td>
+            </tr>
+        </table>
+    }
+
+</Center>
+
+

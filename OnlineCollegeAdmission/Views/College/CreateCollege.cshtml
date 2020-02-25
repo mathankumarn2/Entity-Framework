@@ -1,0 +1,80 @@
+﻿@model OnlineCollegeAdmission.Entity.College
+
+@{
+    ViewBag.Title = "CreateCollege";
+}
+<center>
+    <h2>Create College</h2>
+    @using (Html.BeginForm("CreateCollege", "College", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.CollegeCode)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.CollegeCode)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.CollegeCode)
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.CollegeName)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.CollegeName)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.CollegeName)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.CollegeWebsite)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.CollegeWebsite)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.CollegeWebsite)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.AdmissionFee)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.AdmissionFee)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.AdmissionFee)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.TotalSeats)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.TotalSeats)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.TotalSeats)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Add" />
+                </td>
+            </tr>
+        </table>
+    }
+    <div>
+        @Html.ActionLink("Back to List", "DisplayCollegeByAdmin")
+    </div>
+
+</center>
+
+
