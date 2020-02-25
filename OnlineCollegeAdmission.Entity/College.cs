@@ -30,7 +30,6 @@ namespace OnlineCollegeAdmission.Entity
         [DisplayName("Avilable Seats")]
         [Required(ErrorMessage = "Total seat count is required")]
         public int TotalSeats { get; set; }
-
         public College()
         {
 
